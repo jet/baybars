@@ -20,6 +20,7 @@ setup(name='baybars',
         'numpy==1.14.1',
         'pandas==0.20.3',
         'pymssql==2.1.3',
+        'python-consul==0.7.2',
       ],
       classifiers=[
         'Development Status :: 3 - Alpha',
