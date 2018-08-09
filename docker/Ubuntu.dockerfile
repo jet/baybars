@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 LABEL maintainer="bugra@ymail.com"
 RUN apt-get update --fix-missing
-RUN apt-get install -y python3 python3-pip libssl-dev python3-dev build-essential librdkafka-dev curl wget libssl-dev
+RUN apt-get install -y python3 python3-pip libssl-dev python3-dev build-essential librdkafka-dev curl wget libssl-dev libffi-dev
 RUN apt-get install -y freetds-dev 
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
