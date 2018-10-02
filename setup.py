@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='baybars',
-      version='0.0.1',
+      version='0.0.3',
       description='Python Common Packages',
       copyright='Copyright 2018 Jet.com',
       url='http://pypi.org/project/baybars/',
@@ -19,7 +19,6 @@ setup(name='baybars',
         'requests==2.17.3',
         'numpy==1.14.1',
         'pandas==0.20.3',
-        'pymssql==2.1.3',
         'python-consul==0.7.2',
       ],
       classifiers=[
