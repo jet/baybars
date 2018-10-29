@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='baybars',
-      version='0.0.3',
+      version='0.0.4',
       description='Python Common Packages',
       copyright='Copyright 2018 Jet.com',
       url='http://pypi.org/project/baybars/',
@@ -14,7 +14,7 @@ setup(name='baybars',
         'azure-storage-blob==0.37.0',
         'azure-storage-queue==0.37.0',
         'confluent-kafka==0.11.0',
-        'pydocumentdb==2.3.1',
+        'azure-cosmos==3.0.1 ',
         'pysftp==0.2.9',
         'requests==2.17.3',
         'numpy==1.14.1',
