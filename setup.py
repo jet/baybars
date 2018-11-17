@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='baybars',
-      version='0.0.5',
+      version='0.0.6',
       description='Python Common Packages',
       copyright='Copyright 2018 Jet.com',
       url='http://pypi.org/project/baybars/',
@@ -10,17 +10,17 @@ setup(name='baybars',
       license='Apache 2.0',
       packages=['baybars'],
       install_requires=[
-        'python-consul==0.7.2',
-        'azure-storage-blob==0.37.0',
-        'azure-storage-queue==0.37.0',
-        'confluent-kafka==0.11.0',
-        'azure-cosmos==3.0.1 ',
+        'python-consul==1.1.0',
+        'azure-storage-blob==1.4.0',
+        'azure-storage-queue==1.4.0',
+        'confluent-kafka==0.11.6',
+        'azure-cosmos==3.0.2',
         'pysftp==0.2.9',
-        'requests==2.17.3',
-        'numpy==1.14.1',
-        'pandas==0.20.3',
-        'python-consul==0.7.2',
-        'PyHive==0.5.0'
+        'requests==2.20.1',
+        'numpy==1.15.4',
+        'pandas==0.23.4',
+        'python-consul==1.1.0',
+        'PyHive==0.6.1'
       ],
       classifiers=[
         'Development Status :: 3 - Alpha',
