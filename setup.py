@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='baybars',
-      version='0.0.6',
+      version='0.0.7',
       description='Python Common Packages',
       copyright='Copyright 2018 Jet.com',
       url='http://pypi.org/project/baybars/',
