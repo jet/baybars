@@ -6,7 +6,7 @@ from azure.cosmosdb.table.tablebatch import TableBatch
 from azure.cosmosdb.table.models import Entity
 
 
-class ParitionKeyNotFoundError(Exception):
+class PartitionKeyNotFoundError(Exception):
   pass
 
 class ClusteringKeyNotFoundError(Exception):
@@ -20,10 +20,19 @@ class AzureTable(object):
                      table_name: str, 
                      partition_key_field: str,
                      clustering_key_field: str):
-    self.table = TableService(account_name='myaccount', account_key='mykey')
+    self.table = TableService(account_name=account_name, 
+                              account_key=account_key)
     self.table_name = self.table_name
     self.partition_key_field = partition_key_field
     self.clustering_key_field = clustering_key_field
+
+  @property
+  def partition_key_name(self) -> str:
+    return 'PartitionKey'
+
+  @property
+  def clustering_key_name(self) -> str:
+    return 'RowKey'
 
   def get_payload(self, payload: dict):
     output = None
@@ -31,11 +40,12 @@ class AzureTable(object):
     partition_key = payload.get(self.partition_key_field) 
     clustering_key = payload.get(self.clustering_key_field)
     if partition_key is None:
-      raise ParitionKeyNotFoundError('payload={} does not have a partition key')
+      raise PartitionKeyNotFoundError('payload={} does not have a partition key')
     if clustering_key is None:
       raise ClusteringKeyNotFoundError('payload={} does not have a clustering key')
       
-    item.update({'ParititonKey': partition_key, 'RowKey': clustering_key })
+    item.update({self.partition_key_name: partition_key, 
+                 self.clustering_key_name: clustering_key })
 
     return item
 
@@ -65,4 +75,4 @@ class AzureTable(object):
                               
   def get_by_partition(self, partition_key: str) -> list:
     return self.table.query_entities(self.table_name, 
-                                     filter="PartitionKey eq '{}'".format(partition_key))
+                                     filter="{} eq '{}'".format(self.partition_key_name, partition_key))
