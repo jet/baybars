@@ -1,14 +1,16 @@
-from setuptools import setup
+from setuptools import setup, find_packages
+
+packages = find_packages()
 
 setup(name='baybars',
-      version='0.0.6',
+      version='0.0.10',
       description='Python Common Packages',
       copyright='Copyright 2018 Jet.com',
       url='http://pypi.org/project/baybars/',
       author='Bugra Akyildiz',
       author_email='bugra.akyildiz@jet.com',
       license='Apache 2.0',
-      packages=['baybars'],
+      packages=packages,
       install_requires=[
         'python-consul==1.1.0',
         'azure-storage-blob==1.4.0',
@@ -20,7 +22,8 @@ setup(name='baybars',
         'numpy==1.15.4',
         'pandas==0.23.4',
         'python-consul==1.1.0',
-        'PyHive==0.6.1'
+        'PyHive==0.6.1',
+        'elasticsearch==6.3.1'
       ],
       classifiers=[
         'Development Status :: 3 - Alpha',

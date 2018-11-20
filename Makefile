@@ -8,6 +8,14 @@ SPHINXPROJ    = baybars
 SOURCEDIR     = source
 BUILDDIR      = build
 
+build : 
+	rm -rf build
+	rm -rf dist
+	python3 setup.py bdist_wheel
+
+upload :
+	twine upload dist/*
+
 # Put it first so that "make" without argument is like "make help".
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
