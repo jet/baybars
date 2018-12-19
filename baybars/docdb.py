@@ -89,6 +89,12 @@ class DocDB(object):
 
   def upsert_doc(self, doc: dict):
     return self.client.UpsertItem(self.collection_link, doc)
+  
+  def delete_doc(self, doc_id: str, options=None):
+    if options is None:
+      options = {'partitionKey': doc_id}
+    doc_link = '{}/docs/{}'.format(self.collection_link, doc_id)
+    return self.client.DeleteItem(doc_link, options=options)
 
   def get_by_id(self, doc_id: str, options=None) -> dict:
     if options is None:
