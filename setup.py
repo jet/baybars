@@ -4,12 +4,9 @@ packages = find_packages()
 
 setup(name='baybars',
       version='0.0.12',
-      description='Python Common Packages',
+      setup_requires=['pbr==5.1.1'],
       copyright='Copyright 2018 Jet.com',
       url='http://pypi.org/project/baybars/',
-      author='Bugra Akyildiz',
-      author_email='bugra.akyildiz@jet.com',
-      license='Apache 2.0',
       packages=packages,
       install_requires=[
         'python-consul==1.1.0',
@@ -25,13 +22,7 @@ setup(name='baybars',
         'PyHive==0.6.1',
         'elasticsearch==6.3.1'
       ],
-      classifiers=[
-        'Development Status :: 3 - Alpha',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
-      ],
       keywords='azure kafka blob documentdb cosmosdb queue tar',
       python_requires='>=3.5',
-      zip_safe=False)
+      zip_safe=False,
+      pbr=True)

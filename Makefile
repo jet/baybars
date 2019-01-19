@@ -16,6 +16,14 @@ build :
 upload :
 	twine upload dist/*
 
+publish:
+	rm -rf build
+	rm -rf dist
+	pip install 'twine==1.12.1'
+	python setup.py sdist bdist_wheel
+	twine upload dist/*
+	rm -fr build dist .egg requests.egg-info
+
 # Put it first so that "make" without argument is like "make help".
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)

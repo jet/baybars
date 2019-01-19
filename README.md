@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jet/baybars.svg?branch=master)](https://travis-ci.org/jet/baybars)
+
 ### Baybars
 #### Raison D'être: 
   - Common library that are wrappers on other third party libraries to make life easier for engineers.
