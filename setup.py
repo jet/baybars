@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 packages = find_packages()
 
 setup(name='baybars',
-      version='0.0.10',
+      version='0.0.12',
       description='Python Common Packages',
       copyright='Copyright 2018 Jet.com',
       url='http://pypi.org/project/baybars/',

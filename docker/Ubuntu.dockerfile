@@ -14,4 +14,4 @@ RUN curl -Lk -o /root/librdkafka-${LIBRDKAFKA_VERSION}.tar.gz https://github.com
 ENV CPLUS_INCLUDE_PATH /usr/local/include
 ENV LIBRARY_PATH /usr/local/lib
 ENV LD_LIBRARY_PATH /usr/local/lib
-RUN pip3 install baybars==0.0.10 
+RUN pip3 install baybars==0.0.12
