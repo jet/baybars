@@ -1,4 +1,7 @@
 [![Build Status](https://travis-ci.org/jet/baybars.svg?branch=master)](https://travis-ci.org/jet/baybars)
+[![image](https://img.shields.io/pypi/v/baybars.svg)](https://pypi.org/project/baybars/)
+[![image](https://img.shields.io/pypi/l/baybars.svg)](https://pypi.org/project/baybars/)
+[![image](https://img.shields.io/pypi/pyversions/requests.svg)](https://pypi.org/project/baybars/)
 
 ### Baybars
 #### Raison D'être: 
