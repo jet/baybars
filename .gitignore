@@ -6,3 +6,7 @@ dist/*
 .vscode/
 .pyre/
 .pyre_configuration
+.eggs/
+.pytest_cache/
+AUTHORS
+ChangeLog
