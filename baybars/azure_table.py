@@ -50,7 +50,6 @@ class AzureTable(object):
     return 'RowKey'
 
   def get_payload(self, payload: dict):
-    output = None
     item = deepcopy(payload)
     partition_key = payload.get(self.partition_key_field) 
     clustering_key = payload.get(self.clustering_key_field)
@@ -71,10 +70,16 @@ class AzureTable(object):
     return self.table.insert_entity(self.table_name, self.get_payload(item)) 
 
   def update(self, item: dict):
-    return self.table.update_entity(self.table_name, self.get_payload(item)) 
+    pass
 
   def upsert(self, item: dict):
-    return self.table.insert_or_replace_entity(self.table_name, self.get_payload(item)) 
+    pass
+
+  def delete(self, key: str):
+    pass
+
+  def read(self, key: str):
+    pass
 
   def insert_batch(self, items: list):
     batch = TableBatch()
