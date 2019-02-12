@@ -20,7 +20,8 @@ setup(name='baybars',
         'pandas==0.23.4',
         'python-consul==1.1.0',
         'PyHive==0.6.1',
-        'elasticsearch==6.3.1'
+        'elasticsearch==6.3.1',
+        'azure-cosmosdb-table==1.0.5'
       ],
       keywords='azure kafka blob documentdb cosmosdb queue tar',
       python_requires='>=3.5',
