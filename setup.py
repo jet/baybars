@@ -3,9 +3,9 @@ from setuptools import setup, find_packages
 packages = find_packages()
 
 setup(name='baybars',
-      version='0.0.12',
+      version='0.0.15',
       setup_requires=['pbr==5.1.1'],
-      copyright='Copyright 2018 Jet.com',
+      copyright='Copyright 2019 Jet.com',
       url='http://pypi.org/project/baybars/',
       packages=packages,
       install_requires=[
@@ -20,7 +20,8 @@ setup(name='baybars',
         'pandas==0.23.4',
         'python-consul==1.1.0',
         'PyHive==0.6.1',
-        'elasticsearch==6.3.1'
+        'elasticsearch==6.3.1',
+        'azure-cosmosdb-table==1.0.5'
       ],
       keywords='azure kafka blob documentdb cosmosdb queue tar',
       python_requires='>=3.5',
