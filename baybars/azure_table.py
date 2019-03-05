@@ -70,16 +70,15 @@ class AzureTable(object):
     return self.table.insert_entity(self.table_name, self.get_payload(item)) 
 
   def update(self, item: dict):
-    pass
+    return self.table.update_entity(self.table_name, self.get_payload(item)) 
 
   def upsert(self, item: dict):
-    pass
+    return self.table.insert_or_replace_entity(self.table_name, self.get_payload(item))
 
-  def delete(self, key: str):
-    pass
-
-  def read(self, key: str):
-    pass
+  def delete(self, partition_key: str, clustering_key: str):
+    return self.table.delete_entity(self.table_name, 
+                                    partition_key=partition_key, 
+                                    row_key=clustering_key)
 
   def insert_batch(self, items: list):
     batch = TableBatch()
