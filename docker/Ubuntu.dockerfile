@@ -15,3 +15,7 @@ ENV CPLUS_INCLUDE_PATH /usr/local/include
 ENV LIBRARY_PATH /usr/local/lib
 ENV LD_LIBRARY_PATH /usr/local/lib
 RUN pip3 install baybars==0.0.12
+RUN pip3 install pytest
+
+RUN mkdir -p /opt/python/tests
+COPY tests /opt/python/tests
