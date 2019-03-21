@@ -56,7 +56,7 @@ class KafkaListener:
           out = batch_function(batch)
           self.logger.info('In consume function; total_number_of_messages_produced={}'.format(len(batch)))
           batch = []
-      elif message.error().code() != KafkaError.REBALANCE_IN_PROGRES:
+      elif message.error().code() != KafkaError.REBALANCE_IN_PROGRESS:
         self.logger.error("KafkaListener had the following problem in the consume function={}".format(message.error()))
         is_running = False
 
