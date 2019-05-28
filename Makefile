@@ -19,8 +19,8 @@ upload :
 publish:
 	rm -rf build
 	rm -rf dist
-	pip install 'twine==1.12.1'
-	python setup.py sdist bdist_wheel
+	pip3 install 'twine==1.12.1'
+	python3 setup.py sdist bdist_wheel
 	twine upload dist/*
 	rm -fr build dist .egg requests.egg-info
 
