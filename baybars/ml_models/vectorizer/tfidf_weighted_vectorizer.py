@@ -11,7 +11,8 @@ class TFIDFEmbeddingVectorizer(object):
     self.word2weight = None
     self.dim = len(word2vec)
 
-  def get_tfidf_weights(self, X):
+  @classmethod
+  def get_tfidf_weights(cls, X):
     tfidf = TfidfVectorizer(analyzer=lambda x: x)
     tfidf.fit(X)
     max_idf = max(tfidf.idf_)

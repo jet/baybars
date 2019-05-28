@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
   long_description = fh.read()
 
 setup(name='baybars',
-      version='0.0.24',
+      version='0.0.25',
       setup_requires=['pbr==5.1.1'],
       copyright='Copyright 2019 Jet.com',
       url='http://pypi.org/project/baybars/',
