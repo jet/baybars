@@ -148,7 +148,7 @@ if __name__ == '__main__':
                                              test_data, 
                                              test_labels, 
                                              word_index, 
-                                             embedding_dimension=300, 
+                                             embedding_dimension=10, 
                                              vocabulary_size=vocab_size, 
                                              input_max_length=500,
                                              padding='post')
