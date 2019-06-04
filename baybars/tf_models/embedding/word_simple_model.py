@@ -38,7 +38,7 @@ class SimpleWordEmbeddingModel(object):
 
   @word_index.setter 
   def word_index(self, word_index: dict):
-    self._word_index = {key: (value+3) for key, value in word_index.items()}
+    self._word_index = {key: (value + 3) for key, value in word_index.items()}
     self._word_index['<PAD>'] = 0 
     self._word_index['<START>'] = 1
     self._word_index['<UNK>'] = 2
@@ -53,7 +53,8 @@ class SimpleWordEmbeddingModel(object):
     self._reverse_word_index = {value: key for key, value in self.word_index.items()}
 
   def decode(self, text: str):
-    return ' '.join([self.reverse_word_index.get(ii, '?') for ii in text])
+    return ' '.join([self.reverse_word_index.get(ii, '?') 
+                     for ii in text])
 
   def pad_sequences(self, data, pad_value):
     return keras.preprocessing.sequence.pad_sequences(data,
@@ -78,7 +79,7 @@ class SimpleWordEmbeddingModel(object):
   def fit(self):
     if self.history is None:
       self.train_data = self.pad_sequences(self.train_data, self.word_index['<PAD>'])
-      self.history = self.build_model()\
+      self.history = self.model\
                          .fit(self.train_data,
                               self.train_labels,
                               epochs=50,
