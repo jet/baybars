@@ -113,8 +113,6 @@ class RNNBLSTMModel(RNNSimpleModel):
     return model
 
 
-
-
 if __name__ == '__main__':
   def plot_graphs(history, string):
     plt.plot(history.history[string])
