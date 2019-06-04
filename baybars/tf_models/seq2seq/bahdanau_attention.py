@@ -155,7 +155,8 @@ if __name__ == '__main__':
   runner = BahdanauAttentionRunner()
   # Download the file
   path_to_zip = tf.keras.utils.get_file(
-    'spa-eng.zip', origin='http://storage.googleapis.com/download.tensorflow.org/data/spa-eng.zip',
+    'spa-eng.zip', 
+    origin='http://storage.googleapis.com/download.tensorflow.org/data/spa-eng.zip',
     extract=True)
 
   path_to_file = os.path.dirname(path_to_zip)+"/spa-eng/spa.txt"
