@@ -35,6 +35,18 @@ class RNNSimpleModel(object):
   def tokenizer_encode(self, sentence: str):
     return self.tokenizer.encode(sentence)
 
+  @property
+  def loss_function(self):
+    return 'binary_crossentropy'
+
+  @property
+  def optimizer(self):
+    return 'adam'
+
+  @property
+  def metrics(self):
+    return ['accuracy']
+
   def build_model(self):
     model = tf.keras.Sequential([
       tf.keras.layers.Embedding(tokenizer.vocab_size, self.embedding_size),
@@ -43,9 +55,9 @@ class RNNSimpleModel(object):
       tf.keras.layers.Dense(1, activation='sigmoid')
     ])
 
-    model.compile(loss='binary_crossentropy',
-                  optimizer='adam',
-                  metrics=['accuracy'])
+    model.compile(loss=self.loss_function,
+                  optimizer=self.optimizer
+                  metrics=self.metrics)
 
     return model
 
@@ -94,23 +106,24 @@ class RNNBLSTMModel(RNNSimpleModel):
       tf.keras.layers.Dense(1, activation='sigmoid')
     ])
 
-    model.compile(loss='binary_crossentropy',
-                  optimizer='adam',
-                  metrics=['accuracy'])
+    model.compile(loss=self.loss_function,
+                  optimizer=self.optimizer,
+                  metrics=self.metrics)
 
     return model
 
 
-def plot_graphs(history, string):
-  plt.plot(history.history[string])
-  plt.plot(history.history['val_{}'.format(string)])
-  plt.xlabel("Epochs")
-  plt.ylabel(string)
-  plt.legend([string, 'val_{}'.format(string)])
-  plt.show()
 
 
 if __name__ == '__main__':
+  def plot_graphs(history, string):
+    plt.plot(history.history[string])
+    plt.plot(history.history['val_{}'.format(string)])
+    plt.xlabel("Epochs")
+    plt.ylabel(string)
+    plt.legend([string, 'val_{}'.format(string)])
+    plt.show()
+
   PAD_SIZE = 64
   EMBEDDING_SIZE = 64
   EPOCHS = 10
