@@ -56,7 +56,7 @@ class RNNSimpleModel(object):
     ])
 
     model.compile(loss=self.loss_function,
-                  optimizer=self.optimizer
+                  optimizer=self.optimizer,
                   metrics=self.metrics)
 
     return model
@@ -132,9 +132,7 @@ if __name__ == '__main__':
                             with_info=True, 
                             as_supervised=True)
   train_dataset, test_dataset = dataset['train'], dataset['test']
-
   tokenizer = info.features['text'].encoder
-
   print('Vocabulary size: {}'.format(tokenizer.vocab_size))
 
   train_dataset = train_dataset.shuffle(BUFFER_SIZE)
@@ -147,7 +145,6 @@ if __name__ == '__main__':
                                     embedding_size=EMBEDDING_SIZE)
 
   history = rnn_simple_model.fit(epochs=EPOCHS)
-
   test_loss, test_acc = rnn_simple_model.evaluate()
 
   print('Test Loss: {}'.format(test_loss))
